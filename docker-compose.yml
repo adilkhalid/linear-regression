@@ -1,0 +1,10 @@
+services:
+  simple_linear_regression:
+    build:
+      context: .
+      dockerfile: simple_linear_regression/Dockerfile
+    ports:
+      - "8001:80"
+    env_file:
+      - .env
+
