@@ -1,0 +1,5 @@
+services:
+  simple_linear_regression:
+    build: ./simple_linear_regression
+    ports:
+      - "8001:80"
