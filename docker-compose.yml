@@ -7,4 +7,19 @@ services:
       - "8001:80"
     env_file:
       - .env
-
+  linear_regression:
+    build:
+      context: .
+      dockerfile: linear_regression/Dockerfile
+    ports:
+      - "8002:80"
+    env_file:
+      - .env
+  linear_regression_gd:
+    build:
+      context: .
+      dockerfile: linear_regression_gd/Dockerfile
+    ports:
+      - "8003:80"
+    env_file:
+      - .env

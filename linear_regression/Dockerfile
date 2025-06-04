@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY linear_regression_gd/ ./linear_regression_gd/
+COPY linear_regression/ ./linear_regression/
 COPY data/ ./data/
 
 # Ensure /app is in the Python path
