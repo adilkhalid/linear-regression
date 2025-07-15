@@ -30,7 +30,8 @@ class LinearRegressionGD:
             cost = np.sum((y_pred - y) ** 2) + self.regul * np.sum(self.W ** 2)
 
             # Calculate gradients
-            gradients = 2 * np.dot(X.T, (y_pred - y)) + 2 * self.regul * self.W
+            # 2 * X^T*(y_pred-y_true)
+            gradients = 2 * np.dot(X.T, (y_pred - y)) # + 2 * self.regul * self.W
             # np.clip(gradients, -1e5, 1e5, out=gradients)
             # Update W
             self.W = self.W - lr * gradients

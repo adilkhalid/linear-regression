@@ -14,7 +14,10 @@ class LinearRegression:
         if X.ndim == 1:
             X = X.reshape(-1, 1)
         n = X.shape[0]
+        # y = w0 + w1*x1
         X_bias = np.hstack([np.ones((n, 1)), X])  # Add bias term
+
+        # W = (X^T*X)^-1 * (X^T * y)
         self.W = np.linalg.pinv(X_bias.T @ X_bias) @ X_bias.T @ y
 
     def predict(self, X):
@@ -56,6 +59,8 @@ if __name__ == "__main__":
     model.fit(data_split.x_train, data_split.y_train)
 
     y_pred = model.predict(data_split.x_test)
+    # XWYY = 0
+    # W = XYY
     mse = mean_squared_error(data_split.y_test, y_pred)
     r2 = r2_score(data_split.y_test, y_pred)
 

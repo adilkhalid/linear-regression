@@ -3,7 +3,7 @@ uvicorn
 joblib
 numpy
 scikit-learn
-
+matplotlib
 
 requests
 pytest
